@@ -32,7 +32,7 @@ class MemoList extends StatelessWidget {
         itemCount: memos.length,
         itemBuilder: (context, index) {
           var memo = memos[index];
-          return ListTitle(
+          return ListTile(
               title: Text(memo.title),
               subtitle: Text(memo.content),
               onTap: () {
