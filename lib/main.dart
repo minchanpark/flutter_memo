@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_memo/memo_provider.dart';
 import 'package:provider/provider.dart';
 import 'home_page.dart';
 
@@ -7,11 +8,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp();
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MemoProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Memo App',
+        home: HomePage(),
+      ),
+    );
   }
 }
